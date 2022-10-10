@@ -15,7 +15,8 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build
-      - run: "./build.sh"
+        run: |
+            bash -c "${{ github.workspace }}/build.sh"
 
       - name: Build-musl
         uses: countstarlight/arch-makepkg-action@master
