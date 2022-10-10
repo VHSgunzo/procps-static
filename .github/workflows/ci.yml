@@ -16,7 +16,7 @@ jobs:
 
       - name: Build
         run: |
-            bash -c "${{ github.workspace }}/build.sh"
+            sudo bash -c "${{ github.workspace }}/build.sh"
 
       - name: Build-musl
         uses: countstarlight/arch-makepkg-action@master
