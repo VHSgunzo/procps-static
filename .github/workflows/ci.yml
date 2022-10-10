@@ -15,6 +15,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build
+      - run: "./build.sh"
+
+      - name: Build-musl
         uses: countstarlight/arch-makepkg-action@master
         with:
           #repos: >
@@ -26,7 +29,7 @@ jobs:
           #   coreutils
           #   curl
           #   upx
-          scripts: "./build.sh && ./build-musl.sh"
+          scripts: "./build-musl.sh"
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
