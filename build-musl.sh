@@ -38,7 +38,7 @@ mkdir build
 mkdir release
 pushd build
 
-# download tarballs
+# download procps
 git clone https://gitlab.com/procps-ng/procps.git
 procps_version="$(cd procps && git describe --long --tags|sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g')"
 mv procps "procps-${procps_version}"
