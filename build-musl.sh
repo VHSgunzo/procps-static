@@ -98,10 +98,8 @@ popd # procps-${procps_version}
 
 popd # build
 
-shopt -s extglob
-
 echo "= extracting procps binary"
-cp build/procps-${procps_version}/src/!(*.*) release 2>/dev/null
+find build/procps-${procps_version}/src -maxdepth 1 -type f ! -name "*.*"|xargs -I {} cp {} release
 cp build/procps-${procps_version}/src/ps/pscommand release/ps 2>/dev/null
 
 echo "= striptease"
